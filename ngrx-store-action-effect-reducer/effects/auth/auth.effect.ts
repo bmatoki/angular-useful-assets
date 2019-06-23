@@ -48,7 +48,7 @@ export class AuthEffects {
   @Effect()
   public loadAuthFail$ = this.actions$.ofType(AuthActions.LOAD_AUTH_FAIL).pipe(
         map((err: any) => new SnackBarActions.SnackbarOpen(
-          { message: 'Error', config: this.snackBarErrorConfig })),
+          { message: `Error ${err.msg}`, config: this.snackBarErrorConfig })),
     );
 
 }
