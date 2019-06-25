@@ -121,3 +121,13 @@ you can see the store dispatch
     this.ngUnsubscribe.complete();
   }
 ```
+
+you can pass a parameter to the dispatch
+```
+   this.store.dispatch(new AuthActions.LoadAuth(payload));
+```
+
+```
+this.store.select<any>('auth')
+```
+auth is the state you can see inside the reducers for subscribe and get a data.
