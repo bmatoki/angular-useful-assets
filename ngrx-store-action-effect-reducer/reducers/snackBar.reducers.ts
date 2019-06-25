@@ -1,4 +1,5 @@
-import { SNACKBAR_CLOSE, SNACKBAR_OPEN, SnackbarAction } from '@app/core/store/actions/snackBar.actions';
+import { SNACKBAR_CLOSE, SNACKBAR_OPEN,
+   SnackbarAction } from '@app/core/store/actions/snackBar.actions';
 
 export interface State {
   show: boolean;

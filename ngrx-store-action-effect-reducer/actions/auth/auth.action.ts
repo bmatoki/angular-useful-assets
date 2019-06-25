@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-
+import { HttpResponseInterface } from '@app/shared';
 export const LOAD_AUTH = '[AUTH] Load Auth';
 export const LOAD_AUTH_FAIL = '[AUTH] Load Auth Fail';
 export const LOAD_AUTH_SUCCESS = '[AUTH] Load Auth Success';
@@ -11,7 +11,7 @@ export class LoadAuth implements Action {
 export class LoadAuthFail implements Action {
   readonly type = LOAD_AUTH_FAIL;
 
-  constructor(public payload: any) { }
+  constructor(public payload: HttpResponseInterface) { }
 }
 
 export class LoadAuthSuccess implements Action {

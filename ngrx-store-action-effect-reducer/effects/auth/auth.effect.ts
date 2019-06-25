@@ -39,16 +39,16 @@ export class AuthEffects {
     ),
 );
 
-  @Effect()
-    loadAuthSuccess$ = this.actions$.ofType(AuthActions.LOAD_AUTH_SUCCESS).pipe(
-        map(() => new SnackBarActions.SnackbarOpen(
-          { message: 'Auth Added Successfully', config: this.snackBarSuccessConfig })),
-    );
+  // @Effect()
+  //   loadAuthSuccess$ = this.actions$.ofType(AuthActions.LOAD_AUTH_SUCCESS).pipe(
+  //       map(() => new SnackBarActions.SnackbarOpen(
+  //         { message: 'Auth Added Successfully', config: this.snackBarSuccessConfig })),
+  //   );
 
   @Effect()
   public loadAuthFail$ = this.actions$.ofType(AuthActions.LOAD_AUTH_FAIL).pipe(
         map((err: any) => new SnackBarActions.SnackbarOpen(
-          { message: `Error ${err.msg}`, config: this.snackBarErrorConfig })),
+          { message: 'Error', config: this.snackBarErrorConfig })),
     );
 
 }

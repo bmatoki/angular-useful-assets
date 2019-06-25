@@ -1,33 +1,34 @@
-import * as AuthActions from '../../actions/auth/auth.action';
+import * as LoginActions from '../../actions/login/login.action';
 import { HttpResponseInterface } from '@app/shared';
-export interface AuthState {
+
+export interface LoginState {
   data: HttpResponseInterface[];
   loaded: boolean;
   loading: boolean;
 }
 
-export const initialState: AuthState = {
+export const initialState: LoginState = {
   data: [],
   loaded: false,
   loading: false,
 };
 
-export function reducer(state: AuthState = initialState, action: AuthActions.AuthActions) {
+export function reducer(state: LoginState = initialState, action: LoginActions.LoginActions) {
   switch (action.type) {
-    // LOAD AUTH TOKEN
-    case AuthActions.LOAD_AUTH:
+    // LOAD LOGIN TOKEN
+    case LoginActions.LOAD_LOGIN:
       return {
         ...state,
         loading: true,
         loaded: false,
       };
-    case AuthActions.LOAD_AUTH_FAIL:
+    case LoginActions.LOAD_LOGIN_FAIL:
       return {
         ...state,
         loading: false,
         loaded: false,
       };
-    case AuthActions.LOAD_AUTH_SUCCESS:
+    case LoginActions.LOAD_LOGIN_SUCCESS:
       return {
         ...state,
         loading: false,
